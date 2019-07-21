@@ -9,6 +9,18 @@ It is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 Generate fake data that can be used in linear regression (or something like that).
 
+**Maven dependency**
+
+```xml
+<dependency>
+<groupId>org.riversun</groupId>
+<artifactId>fake-data-maker</artifactId>
+<version>1.0.0</version>
+</dependency>
+```
+
+**Example code**
+
 ```java
 
 import java.io.File;
@@ -99,7 +111,14 @@ class _ExampleEn {
 }
 ```
 
-And you can get like this CSV file.
+**Result**
+You can get like this CSV file.
+
+Download **gem price** example data from [here](https://raw.githubusercontent.com/riversun/ml-fake-data-maker/master/datasets/gem_price.csv)
+
+In the case of this data,
+it is possible to predict the price of the gem (objective variable ) from the attribute (explanatory variable) using linear regression etc.
+
 
 ```shell
 id,material,shape,weight,brand,shop,price

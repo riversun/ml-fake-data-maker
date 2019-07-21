@@ -7,7 +7,7 @@ It is licensed under [MIT](https://opensource.org/licenses/MIT).
 
 **Example Code**
 
-Generate fake data that can be used in linear regression (or something like that). 
+Generate fake data that can be used in linear regression (or something like that).
 
 ```java
 
@@ -16,7 +16,7 @@ import org.riversun.ml.fakedatamaker.AttributeNumeric.ComputeMethod;
 import org.riversun.ml.fakedatamaker.RegInstanceGenerator.DataRuleCompliantListener;
 
 /**
- * 
+ *
  * Generate fake data that can be used in linear regression analysis
  *
  */
@@ -127,7 +127,7 @@ id,material,shape,weight,brand,shop,price
 ```
 
 
-<table border="1" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+<table>
 <tr><td>id</td><td>material</td><td>shape</td><td>weight</td><td>brand</td><td>shop</td><td>price</td></tr>
 <tr><td x:num="">0</td><td>Diamond</td><td>Neckless</td><td x:num="">20</td><td>FamouseBrand</td><td>BrandStore</td><td x:num="">2144</td></tr>
 <tr><td x:num="">1</td><td>Diamond</td><td>Brooch</td><td x:num="">17</td><td>NoBrand</td><td>DepartmentStore</td><td x:num="">393</td></tr>
@@ -150,4 +150,3 @@ id,material,shape,weight,brand,shop,price
 <tr><td x:num="">18</td><td>Silver</td><td>Ring</td><td x:num="">14</td><td>WorldTopBrand</td><td>BrandStore</td><td x:num="">522</td></tr>
 <tr><td x:num="">19</td><td>Silver</td><td>Brooch</td><td x:num="">18</td><td>FamouseBrand</td><td>BrandStore</td><td x:num="">307</td></tr>
 </table>
-

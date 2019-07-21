@@ -75,10 +75,10 @@ class _ExampleJa {
 				return true;
 			}
 		});
-
-		String generatedCSV = instance.generateCSV(500, "価格", basePrice);
+		int numOfLines = 500;
+		String generatedCSV = instance.generateCSV(numOfLines, "価格", basePrice);
 		System.out.println(generatedCSV);
-		instance.save(new File("c:/temp/price.txt"), generatedCSV);
+		instance.save(new File("c:/temp/gem_price_ja.csv"), generatedCSV);
 
 	}
 }

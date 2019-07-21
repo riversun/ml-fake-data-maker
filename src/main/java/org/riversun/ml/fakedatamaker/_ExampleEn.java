@@ -83,7 +83,7 @@ class _ExampleEn {
 		int numOfLines=20;
 		String generatedCSV = instance.generateCSV(numOfLines, "price", basePrice);
 		System.out.println(generatedCSV);
-		instance.save(new File("c:/temp/price.csv"), generatedCSV);
+		instance.saveAsUTF8(new File("c:/temp/price.csv"), generatedCSV);
 
 	}
 }

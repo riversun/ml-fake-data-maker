@@ -141,10 +141,19 @@ public class RegInstanceGenerator {
 		return sb.toString();
 	}
 
-	public void save(File file, String string) {
-
-		TextFileWriter w = new TextFileWriter();
-		w.writeText(file, string, "UTF-8", false);
+	public void saveAsUTF8(File file, String string) {
+		save(file, "UTF-8", string);
 	}
 
+	public void save(File file, String encoding, String string) {
+
+		TextFileWriter w = new TextFileWriter();
+		w.writeText(file, string, encoding, false);
+	}
+
+	public void saveAsUTF8WithBom(File file, String encoding, String string) {
+
+		TextFileWriter w = new TextFileWriter();
+		w.writeTextAsUTF8WithBOM(file, string, false);
+	}
 }

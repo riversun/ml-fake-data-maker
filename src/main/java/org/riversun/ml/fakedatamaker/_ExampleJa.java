@@ -14,35 +14,35 @@ class _ExampleJa {
 
 		// 各属性を作る
 		Attribute acGenryo = new Attribute(
-				"原料",
+				"material",
 				new AttributeNominal("ダイア", 20),
 				new AttributeNominal("プラチナ", 15),
 				new AttributeNominal("ゴールド", 10),
 				new AttributeNominal("シルバー", 3));
 
 		Attribute brand = new Attribute(
-				"ブランド",
+				"brand",
 				new AttributeNominal("海外超有名ブランド", 8.0),
 				new AttributeNominal("海外有名ブランド", 4.5),
 				new AttributeNominal("国内有名ブランド", 2.0),
 				new AttributeNominal("ノーブランド", 1.0));
 
 		Attribute shop = new Attribute(
-				"販売店",
+				"shop",
 				new AttributeNominal("直営店", 1.7),
 				new AttributeNominal("百貨店", 1.5),
 				new AttributeNominal("量販店", 1.2),
 				new AttributeNominal("激安ショップ", 1.1));
 
 		Attribute shape = new Attribute(
-				"加工",
+				"shape",
 				new AttributeNominal("指輪", 1.10),
 				new AttributeNominal("ネックレス", 1.07),
 				new AttributeNominal("イアリング", 1.05),
 				new AttributeNominal("ブローチ", 1.05),
 				new AttributeNominal("ブレスレット", 1.15));
 
-		Attribute weightg = new Attribute("重さ",
+		Attribute weightg = new Attribute("weight",
 				new AttributeNumeric(10, 60, ComputeMethod.LOG10, 1));
 
 		RegInstanceGenerator instance = new RegInstanceGenerator()
@@ -57,17 +57,17 @@ class _ExampleJa {
 			@Override
 			public boolean isCompliant(AttributeCheck check) {
 
-				if (check.nominalEquals("ブランド", "ノーブランド") && check.nominalEquals("販売店", "直営店")) {
+				if (check.nominalEquals("brand", "ノーブランド") && check.nominalEquals("shop", "直営店")) {
 					// ・ノーブランドには「直営店」は無い
 					return false;
 				}
-				if (check.nominalEquals("ブランド", "海外超有名ブランド") &&
-						(check.nominalEquals("販売店", "激安ショップ")) || check.nominalEquals("販売店", "量販店")) {
+				if (check.nominalEquals("brand", "海外超有名ブランド") &&
+						(check.nominalEquals("shop", "激安ショップ")) || check.nominalEquals("shop", "量販店")) {
 					// ・海外超有名ブランドは「激安ショップ」や「量販店」では取り扱いがない
 					return false;
 				}
-				if (check.nominalEquals("ブランド", "海外有名ブランド") &&
-						(check.nominalEquals("販売店", "激安ショップ"))) {
+				if (check.nominalEquals("brand", "海外有名ブランド") &&
+						(check.nominalEquals("shop", "激安ショップ"))) {
 					// ・海外有名ブランドは「激安ショップ」では取り扱いがない
 					return false;
 				}
@@ -75,10 +75,12 @@ class _ExampleJa {
 				return true;
 			}
 		});
+
 		int numOfLines = 500;
-		String generatedCSV = instance.generateCSV(numOfLines, "価格", basePrice);
+		String generatedCSV = instance.generateCSV(numOfLines, "price", basePrice);
 		System.out.println(generatedCSV);
-		instance.save(new File("c:/temp/gem_price_ja.csv"), generatedCSV);
+
+		instance.saveAsUTF8WithBom(new File("c:/temp/gem_price_ja.csv"), "UTF-8", generatedCSV);
 
 	}
 }

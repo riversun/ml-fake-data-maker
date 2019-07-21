@@ -114,8 +114,6 @@ class _ExampleEn {
 **Result**
 You can get like this CSV file.
 
-Download **gem price** example data from [here](https://raw.githubusercontent.com/riversun/ml-fake-data-maker/master/datasets/gem_price.csv)
-
 In the case of this data,
 it is possible to predict the price of the gem (objective variable ) from the attribute (explanatory variable) using linear regression etc.
 
@@ -169,3 +167,25 @@ id,material,shape,weight,brand,shop,price
 <tr><td x:num="">18</td><td>Silver</td><td>Ring</td><td x:num="">14</td><td>WorldTopBrand</td><td>BrandStore</td><td x:num="">522</td></tr>
 <tr><td x:num="">19</td><td>Silver</td><td>Brooch</td><td x:num="">18</td><td>FamouseBrand</td><td>BrandStore</td><td x:num="">307</td></tr>
 </table>
+
+# **Download example data for learning and regression**
+Data file is also MIT licensed.
+
+# **Gem Prices**
+
+**Purpose**
+Predict sales price from gem attributes
+
+**Format**
+
+```
+id,material,shape,weight,brand,shop,price
+0,Gold,Brace,42,NationalBrand,DepartmentStore,561
+1,Gold,Earrings,51,NoBrand,DepartmentStore,269
+...
+```
+
+**Data File**
+
+- [**CSV File(EN)**](https://raw.githubusercontent.com/riversun/ml-fake-data-maker/master/datasets/gem_price.csv)
+- [**CSV File(JA) UTF-8 with BOM**](https://raw.githubusercontent.com/riversun/ml-fake-data-maker/master/datasets/gem_price_ja.csv)

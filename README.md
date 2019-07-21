@@ -1,5 +1,5 @@
 # Overview
-Library to generate fake data for regression analysis
+Library to generate fake data for machine learningu (like prediction with linearregression,randomforest,gbt etc.)
 
 It is licensed under [MIT](https://opensource.org/licenses/MIT).
 

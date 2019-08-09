@@ -51,7 +51,7 @@ class _ExampleEn {
 
         FakeDataSet ds = new FakeDataSet.Builder()
                 .type(DataType.REGRESSION)
-                .outputFormat(OutputFormat.CSV)
+                .outputFormat(OutputFormat.CSV)//CSV or ARFF
                 .nameOfData("gemsales")
                 .addAttr(material)
                 .addAttr(shape)
@@ -80,16 +80,16 @@ class _ExampleEn {
                         return true;
                     }
                 })
-                .numOfLines(500)
-                .targetLabel("price")
+                .numOfLines(500)//num of data
+                .targetLabel("price")//target label
                 .targetInitialValue(basePrice)
                 .valueVolatility(0.0)
                 .withHeader(true)
                 .withId(true)
                 .build();
 
-        ds.save(new File("c:/temp/data.txt"), "UTF-8");
-        System.out.println(ds.get());
+        //ds.save(new File("c:/temp/gem_price.csv"), "UTF-8");//save generated data
+        System.out.println(ds.get());//print generated data
 
     }
 }

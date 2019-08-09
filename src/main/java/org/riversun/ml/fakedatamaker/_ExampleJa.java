@@ -51,7 +51,7 @@ class _ExampleJa {
 
         FakeDataSet ds = new FakeDataSet.Builder()
                 .type(DataType.REGRESSION)
-                .outputFormat(OutputFormat.CSV)
+                .outputFormat(OutputFormat.CSV)//CSV or ARFF
                 .nameOfData("gemsales")
                 .addAttr(material)
                 .addAttr(shape)
@@ -81,15 +81,15 @@ class _ExampleJa {
                                 return true;
                             }
                         })
-                .numOfLines(500)
-                .targetLabel("price")
+                .numOfLines(500)//データ数
+                .targetLabel("price")//ターゲットラベル（予測に使用）
                 .targetInitialValue(basePrice)
                 .valueVolatility(0.0)
                 .withHeader(true)
                 .withId(true)
                 .build();
 
-        ds.save(new File("c:/temp/data.txt"), "UTF-8");
+        //ds.save(new File("c:/temp/gem_price_ja.csv"), "UTF-8");
         System.out.println(ds.get());
 
     }

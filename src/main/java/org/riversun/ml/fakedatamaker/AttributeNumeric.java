@@ -43,7 +43,7 @@ public class AttributeNumeric {
 	}
 
 	public AttributeNumericValue getRandomNumeric() {
-		double generatedNumericValue = (Math.random() * (maxValue - minValue) + minValue);
+		double generatedNumericValue = (MyMath.random() * (maxValue - minValue) + minValue);
 
 		double _coefficient = 1;
 

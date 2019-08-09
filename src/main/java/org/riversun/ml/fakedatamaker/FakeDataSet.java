@@ -50,6 +50,7 @@ public class FakeDataSet {
     private boolean withHeader;
     private boolean withId;
     private String nameOfData;
+    private Long seed;
 
     public static class Builder {
 
@@ -63,8 +64,8 @@ public class FakeDataSet {
         private double valueVolatility = 0.0;
         private boolean withHeader = true;
         private boolean withId = true;
-
         private String nameOfData = "dataset";
+        private Long seed = null;
 
         public Builder() {
 
@@ -87,6 +88,11 @@ public class FakeDataSet {
 
         public Builder type(DataType type) {
             this.type = type;
+            return Builder.this;
+        }
+
+        public Builder seed(long seed) {
+            this.seed = seed;
             return Builder.this;
         }
 
@@ -163,12 +169,14 @@ public class FakeDataSet {
         this.withHeader = builder.withHeader;
         this.withId = builder.withId;
         this.nameOfData = builder.nameOfData;
-
+        this.seed = builder.seed;
     }
 
     public String get() {
         String result = "";
-
+        if (this.seed != null) {
+            MyMath.setSeed(this.seed);
+        }
         if (this.type == DataType.REGRESSION) {
 
             switch (this.outputFormat) {

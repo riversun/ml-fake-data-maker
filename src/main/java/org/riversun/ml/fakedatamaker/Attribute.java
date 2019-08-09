@@ -68,7 +68,7 @@ public class Attribute {
 	 * @return
 	 */
 	AttributeNominal generateRandomNominal() {
-		int idx = (int) (Math.random() * nominals.length);
+		int idx = (int) (MyMath.random() * nominals.length);
 		return nominals[idx];
 	}
 

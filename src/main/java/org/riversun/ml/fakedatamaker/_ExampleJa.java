@@ -51,7 +51,7 @@ class _ExampleJa {
 
         FakeDataSet ds = new FakeDataSet.Builder()
                 .type(DataType.REGRESSION)
-                .outputFormat(OutputFormat.CSV)//CSV or ARFF
+                .outputFormat(OutputFormat.CSV)// CSV or ARFF
                 .nameOfData("gemsales")
                 .addAttr(material)
                 .addAttr(shape)
@@ -81,10 +81,11 @@ class _ExampleJa {
                                 return true;
                             }
                         })
-                .numOfLines(500)//データ数
-                .targetLabel("price")//ターゲットラベル（予測に使用）
+                .numOfLines(500)// データ数
+                .targetLabel("price")// ターゲットラベル（予測に使用）
                 .targetInitialValue(basePrice)
                 .valueVolatility(0.0)
+                //.seed(1)// 乱数のシード(1以上のlongで指定)
                 .withHeader(true)
                 .withId(true)
                 .build();

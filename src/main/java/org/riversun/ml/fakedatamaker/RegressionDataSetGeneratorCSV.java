@@ -104,7 +104,7 @@ public class RegressionDataSetGeneratorCSV extends DataSetGenerator {
         double computedValue = 0;
 
         do {
-            computedValue = baseValue + (volatility * Math.random() * baseValue);
+            computedValue = baseValue + (volatility * MyMath.random() * baseValue);
             sb.setLength(0);
             for (Attribute attr : attrs) {
                 if (attr.isNominal) {

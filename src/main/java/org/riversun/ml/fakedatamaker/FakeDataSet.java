@@ -23,7 +23,7 @@
 *  
 */
 
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
 import java.io.File;
 import java.util.ArrayList;

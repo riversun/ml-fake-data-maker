@@ -23,12 +23,12 @@
 *  
 */
 
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.riversun.ml.fakedatamaker.v11.AttributeNumeric.AttributeNumericValue;
+import org.riversun.ml.fakedatamaker.AttributeNumeric.AttributeNumericValue;
 
 /**
  * Generate CSV data for Regression

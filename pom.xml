@@ -6,7 +6,7 @@
 
 	<groupId>org.riversun</groupId>
 	<artifactId>fake-data-maker</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 	<name>fake-data-maker</name>
 	<description>Generate fake data for regression analysis

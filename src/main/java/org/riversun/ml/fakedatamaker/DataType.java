@@ -21,23 +21,14 @@
  *  DEALINGS IN THE SOFTWARE.
  *  
  */
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
 /**
+ * Now supports only REGRESSION data
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
+ *
  */
-public class AttributeNominal implements AttributeValue {
-
-	public String name;
-	public double coefficient;
-	public int index;
-
-	public AttributeNominal(String name, double coefficient) {
-
-		this.name = name;
-		this.coefficient = coefficient;
-		this.index = -1;
-	}
-
+public enum DataType {
+    REGRESSION
 }

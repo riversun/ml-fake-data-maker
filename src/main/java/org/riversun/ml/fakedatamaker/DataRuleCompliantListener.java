@@ -21,15 +21,13 @@
  *  DEALINGS IN THE SOFTWARE.
  *  
  */
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
 /**
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-public enum ComputeMethod {
-    NORMAL,
-    SQRT,
-    LOG10
+public interface DataRuleCompliantListener {
+    public boolean isCompliant(AttributeCheck valueMap);
 }

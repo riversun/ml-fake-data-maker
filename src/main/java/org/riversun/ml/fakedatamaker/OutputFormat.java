@@ -22,7 +22,7 @@
 *  
 */
 
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
 /**
  * OutputFormat supports CSV and ARFF(for weka)

@@ -21,64 +21,44 @@
  *  DEALINGS IN THE SOFTWARE.
  *  
  */
-package org.riversun.ml.fakedatamaker.v11;
+package org.riversun.ml.fakedatamaker;
 
-import org.riversun.ml.fakedatamaker.v11.AttributeNumeric.AttributeNumericValue;
+import java.util.List;
 
 /**
+ * Base class of DataSet generator
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
+ *
  */
-public class Attribute {
+public abstract class DataSetGenerator {
 
-	public String label;
-	public boolean isNominal = false;
-	public AttributeNominal[] nominals;
-	public AttributeNumeric numeric;
+    protected List<Attribute> attrs;
 
-	/**
-	 * Initialize by nominal attribute
-	 * 
-	 * @param label
-	 * @param nominals
-	 */
-	public Attribute(String label, AttributeNominal... nominals) {
-		this.label = label;
-		this.nominals = nominals;
-		for (int i = 0; i < nominals.length; i++) {
-			nominals[i].index = i;
-		}
-		this.isNominal = true;
-	}
+    protected String nameOfData;
 
-	/**
-	 * Initialize by numeric attribute
-	 * 
-	 * @param label
-	 * @param numeric
-	 */
-	public Attribute(String label, AttributeNumeric numeric) {
-		this.label = label;
-		this.numeric = numeric;
-	}
+    public void setAttrs(List<Attribute> attrs) {
+        this.attrs = attrs;
+    }
 
-	/**
-	 * Returns randomly selected nominal
-	 * 
-	 * @return
-	 */
-	AttributeNominal generateRandomNominal() {
-		int idx = (int) (Math.random() * nominals.length);
-		return nominals[idx];
-	}
+    public void setNameOfData(String nameOfData) {
+        this.nameOfData = nameOfData;
+    }
 
-	/**
-	 * Returns a random value that fits within the specified range
-	 * 
-	 * @return
-	 */
-	AttributeNumericValue generateRandomNumeric() {
-		return numeric.getRandomNumeric();
-	}
+    protected DataRuleCompliantListener compliantListener = new DataRuleCompliantListener() {
+
+        @Override
+        public boolean isCompliant(AttributeCheck valueMap) {
+            return true;
+        }
+    };
+
+    public DataRuleCompliantListener getCompliantListener() {
+        return compliantListener;
+    }
+
+    public void setCompliantListener(DataRuleCompliantListener compliantListener) {
+        this.compliantListener = compliantListener;
+    }
 
 }

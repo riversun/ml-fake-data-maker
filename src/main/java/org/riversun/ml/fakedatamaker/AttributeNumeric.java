@@ -34,12 +34,6 @@ public class AttributeNumeric {
 	public double coefficient;
 	public ComputeMethod computeMethod;
 
-	public enum ComputeMethod {
-		NORMAL,
-		SQRT,
-		LOG10
-	}
-
 	public AttributeNumeric(double minValue, double maxValue, ComputeMethod computeMethod, double coefficient) {
 
 		this.minValue = minValue;

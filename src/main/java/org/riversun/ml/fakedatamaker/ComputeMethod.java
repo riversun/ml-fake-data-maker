@@ -21,44 +21,15 @@
  *  DEALINGS IN THE SOFTWARE.
  *  
  */
-package org.riversun.ml.fakedatamaker.v11;
-
-import java.util.List;
+package org.riversun.ml.fakedatamaker;
 
 /**
- * Base class of DataSet generator
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-public abstract class DataSetGenerator {
-
-    protected List<Attribute> attrs;
-
-    protected String nameOfData;
-
-    public void setAttrs(List<Attribute> attrs) {
-        this.attrs = attrs;
-    }
-
-    public void setNameOfData(String nameOfData) {
-        this.nameOfData = nameOfData;
-    }
-
-    protected DataRuleCompliantListener compliantListener = new DataRuleCompliantListener() {
-
-        @Override
-        public boolean isCompliant(AttributeCheck valueMap) {
-            return true;
-        }
-    };
-
-    public DataRuleCompliantListener getCompliantListener() {
-        return compliantListener;
-    }
-
-    public void setCompliantListener(DataRuleCompliantListener compliantListener) {
-        this.compliantListener = compliantListener;
-    }
-
+public enum ComputeMethod {
+    NORMAL,
+    SQRT,
+    LOG10
 }

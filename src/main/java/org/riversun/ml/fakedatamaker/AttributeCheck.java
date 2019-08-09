@@ -33,28 +33,28 @@ import org.riversun.ml.fakedatamaker.AttributeNumeric.AttributeNumericValue;
  */
 public class AttributeCheck {
 
-	private Map<String, AttributeValue> valueMap;
+    private Map<String, AttributeValue> valueMap;
 
-	public AttributeCheck(Map<String, AttributeValue> valueMap) {
-		this.valueMap = valueMap;
-	}
+    public AttributeCheck(Map<String, AttributeValue> valueMap) {
+        this.valueMap = valueMap;
+    }
 
-	public boolean nominalEquals(String label, String nominalValue) {
+    public boolean nominalEquals(String label, String nominalValue) {
 
-		AttributeNominal nominal = (AttributeNominal) valueMap.get(label);
-		if (nominal.name.equals(nominalValue)) {
-			return true;
-		}
-		return false;
-	}
+        AttributeNominal nominal = (AttributeNominal) valueMap.get(label);
+        if (nominal.name.equals(nominalValue)) {
+            return true;
+        }
+        return false;
+    }
 
-	public boolean numericEquals(String label, double numericValue) {
+    public boolean numericEquals(String label, double numericValue) {
 
-		AttributeNumericValue numeric = (AttributeNumericValue) valueMap.get(label);
-		if (numeric.numericValue == numericValue) {
-			return true;
-		}
+        AttributeNumericValue numeric = (AttributeNumericValue) valueMap.get(label);
+        if (numeric.numericValue == numericValue) {
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 }

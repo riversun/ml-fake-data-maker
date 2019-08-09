@@ -80,7 +80,7 @@ class _ExampleEn {
                         return true;
                     }
                 })
-                .numOfLines(20)
+                .numOfLines(500)
                 .targetLabel("price")
                 .targetInitialValue(basePrice)
                 .valueVolatility(0.0)
@@ -88,7 +88,7 @@ class _ExampleEn {
                 .withId(true)
                 .build();
 
-        ds.save(new File("c:/temp6/a.arff"),"UTF-8");
+        ds.save(new File("c:/temp/data.txt"), "UTF-8");
         System.out.println(ds.get());
 
     }
